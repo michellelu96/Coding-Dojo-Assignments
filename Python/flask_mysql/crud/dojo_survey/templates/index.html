@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dojo Survey Index</title>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container border bg-dark text-white">
+            <h1>Dojo Survey</h1>
+            <form action='/user/info' method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="name"
+                           class="form-control"
+                           name="name"
+                           id="name"
+                           placeholder="Joshua Vee">
+                </div>
+                <div>
+                    <label for="location">Dojo Location:</label>
+                    <select class="form-select form-select-sm"
+                            name="location"
+                            id ="location"
+                            aria-label=".form-select-sm example">
+                        <option value="Bellevue">
+                            Bellevue
+                        </option>
+                        <option value="Boise">
+                            Boise
+                        </option>
+                        <option value="Chicago">
+                            Chicago
+                        </option>
+                        <option value="Los Angeles">
+                            Los Angeles
+                        </option>
+                        <option value="San Jose">
+                            San Jose
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fav_lang">Favorite Language:</label>
+                    <select class="form-select form-select-sm"
+                            name="language"
+                            id="language"
+                            aria-label=".form-select-sm example">
+                        <option value="Python">
+                            Python
+                        </option>
+                        <option value="MERN">
+                            MERN
+                        </option>
+                        <option value="C#">
+                            C#
+                        </option>
+                        <option value='Javascript'>
+                            Javascript
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="comments" name="comment" id="comment" class="form-label">Comments:</label>
+                    <textarea class="form-control" name ='comments' rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        {%with messages = get_flashed_messages()%}
+            {%if messages%}
+                {%for message in messages%}
+                    <p>
+                        {{message}}
+                    </p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+    </body>
+</html>

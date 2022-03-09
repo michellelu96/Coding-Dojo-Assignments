@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <title>All Users</title>
+    </head>
+    <body>
+        <h1 class='text-center'>All Users</h1>
+        <div class='container'>
+            <table class="table">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Created At:</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                {% for one_user in all_users %}
+                    <tr>
+                        <th scope="row">ID : {{ one_user.id }}</th>
+                        <th scope="row">Full Name : {{ one_user.first_name }} {{ one_user.last_name }}</th>
+                        <th scope="row">Email: {{ one_user.email }}</th>
+                        <th scope="row">Created At: {{ one_user.created_at }}</th>
+                        <th scope="row">
+                            <a href="/user/show/{{ one_user.id }}">Show</a>
+                            <a href="/user/edit/{{ one_user.id }}">Edit</a>
+                            <a href="/user/delete/{{ one_user.id }}">Delete</a>
+                        </th>
+                    {% endfor %}
+                    <a href="/user/new" class="btn btn-primary">Add a User</a>
+                    <p><a href='/user'>Home</a></p>
+                </div>
+            </body>
+        </html>

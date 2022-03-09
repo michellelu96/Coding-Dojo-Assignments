@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <title>Edit User</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="/user/update" method = "post">
+                <h1 class="text-center">Edit {{ user.first_name }}</h1>
+                <input type="hidden" name="id" value={{user.id}}>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">First Name:</span>
+                    <input type="text"
+                           name="first_name"
+                           class="form-control"
+                           aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default"
+                           value="{{ user.first_name }}">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Last Name:</span>
+                    <input type="text"
+                           name="last_name"
+                           class="form-control"
+                           aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default"
+                           value="{{ user.last_name }}">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Email Address:</span>
+                    <input type="text"
+                           name="email"
+                           class="form-control"
+                           aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default"
+                           value="{{ user.email }}">
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary" value="update" type="submit">Submit</button>
+                </div>
+            </form>
+            <p><a href='/user'>Home</a></p>
+        </div>
+    </body>
+</html>

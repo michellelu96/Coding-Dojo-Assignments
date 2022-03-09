@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    border: 0;
+    margin: 0px, auto;
+    padding: 0;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-top: -2px;
+}
+
+.color0 {
+    background-color: {{color2}};
+}
+
+.color1 {
+    background-color: {{color1}};
+}
+</style>
+<body>
+
+<h1 style="text-align:center">Checkerboard!</h1>
+    <div>
+        <table>
+            {% for x in range(rows)%}
+            <tr>
+                {% for y in range(columns)%}
+                <td class="color{{ (x+y)%2 }}"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

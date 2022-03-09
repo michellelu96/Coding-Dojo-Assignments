@@ -1,0 +1,55 @@
+USE mydb;
+
+INSERT INTO dojos (name,location)
+VALUES('Silicon Valley','San Jose');
+
+INSERT INTO dojos (name,location)
+VALUES('Washington','Bellevue');
+
+INSERT INTO dojos (name,location)
+VALUES('LA','Los Angeles');
+
+DELETE FROM dojos;
+
+INSERT INTO dojos (name,location)
+VALUES('Bay Area','San Fransico');
+
+INSERT INTO dojos (name,location)
+VALUES('Santa Clara County','Fremont');
+
+INSERT INTO dojos (name,location)
+VALUES('SoCal','San Diego');
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Michelle','Lu','25',1);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Josh','Vee','28',1);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Mel','V','25',1);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('M','L','25',2);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('J','V','28',2);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('M','V','25',2);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('M','Lu','25',3);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('J','Vee','28',3);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id)
+VALUES('Melly','V','25',3);
+
+SELECT students_id FROM users WHERE id=1;
+
+SELECT students_id FROM users WHERE id=3;
+
+SELECT dojo_id FROM ninja WHERE id=9;
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class ="d-flex flex-column justify-content-center" style="width:1000px; margin:auto;">
+    <p class="h1 text-center">Welcome to the Great Number Game!</p>
+    <p class="text-center">I am thinking of a number between 1 and 100<br>Take a guess!</p>
+    {%if session['attempt'] != 999%}
+        {%if session['alert']== 'high'%}
+    <div class="col " style="background-color:red;text-align:center; width:200px;margin:auto;" role="alert">
+        Too high!
+    </div>
+        {% endif %}{%if session['alert']== 'low'%}
+    <div class="col"  style="background-color:red;text-align:center;width:200px;margin:auto;" role="alert">
+        Too low!
+    </div>
+        {% endif %}{%if session['alert']== 'correct'%}
+    <div class="col" style="background-color:green;text-align:center;width:200px;margin:auto;" role="alert">
+        Correct! You Win
+    </div>
+        {%endif%}
+        {%if session['attempt']==5%}
+    <div class="col" style="background-color:red; text-align:center;width:200px;margin:auto;" role="alert">
+        You Lose! Try again
+    </div>
+        {%endif%}
+    {%endif%}
+    <div class="input-group mb-3 text-center" style="width:250px; margin: auto;">
+        <form action='num' method='post'>
+            <input type="text" name="guess" class="form-control " placeholder="100" aria-label="guess"
+                aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Guess!</button>
+        </form>
+    </div>
+</body>
+
+</html>
